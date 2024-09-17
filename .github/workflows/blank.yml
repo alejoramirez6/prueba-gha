@@ -29,13 +29,8 @@ jobs:
         # Comando para mostrar un mensaje en la consola
         run: echo "Hello, world!"
 
-      - name: "Mostrando mensaje"
-
-        # Comando para descargar Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14.x"
-          run: |
-            echo "Esto es el valor de Platform: ${{env.platform}}"
-            echo "Esto es el valor de Region: ${{env.region}}"
-            echo "Esto es el valor de Account: ${{env.account}}"
+      - name: "Mostrando variables de entorno"
+        run: |
+          echo "Esto es el valor de Platform: ${{env.platform}}"
+          echo "Esto es el valor de Region: ${{env.region}}"
+          echo "Esto es el valor de Account: ${{env.account}}"
