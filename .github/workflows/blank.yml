@@ -21,6 +21,9 @@ jobs:
       region: us-east-1
       account: 123456789012
 
+      username: ${{secrets.USERNAME}}
+      password: ${{secrets.PASSWORD}}
+
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -30,11 +33,14 @@ jobs:
         run: echo "Hello, world!"
 
       - name: "Mostrando variables de entorno"
-        if: ${{env.platform == 'azure'}}
+        # if: ${{env.platform == 'azure'}}
         run: |
           echo "Esto es el valor de Platform: ${{env.platform}}"
           echo "Esto es el valor de Region: ${{env.region}}"
           echo "Esto es el valor de Account: ${{env.account}}"
+
+          echo "Esto es el valor de Username: ${{secrets.USERNAME}}"
+          echo "Esto es el valor de Password: ${{secrets.PASSWORD}}"
 
       - name: "Mostrando variables por defecto"
         run: |
