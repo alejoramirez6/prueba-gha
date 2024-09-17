@@ -14,6 +14,13 @@ jobs:
   # Los jobs son una serie de pasos que nosotros queremos que ejecute este programa
   build:
     # The type of runner that the job will run on
+    env:
+      # Acá defino las variables de entorno por ejemplo Definimos una variable de entorno que contendrá la versión de Node.js que deseamos utilizar
+      # NODE_VERSION: "14.x"
+      platform: aws
+      region: us-east-1
+      account: 123456789012
+
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -21,3 +28,14 @@ jobs:
       - name: "Mostrar mensaje"
         # Comando para mostrar un mensaje en la consola
         run: echo "Hello, world!"
+
+      - name: "Mostrando mensaje"
+
+        # Comando para descargar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+          run: |
+            echo "Esto es el valor de Platform: ${{env.platform}}"
+            echo "Esto es el valor de Region: ${{env.region}}"
+            echo "Esto es el valor de Account: ${{env.account}}"
