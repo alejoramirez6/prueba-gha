@@ -54,3 +54,10 @@ jobs:
           echo "Evento: ${{toJSON(github.event)}}"
           echo "GITHUB_ACTOR: ${{github.actor}}"
           echo "Nombre del repositorio: ${{github.repository}}"
+
+  other:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Mostrar mensaje"
+        run: echo "Otro mensaje"
