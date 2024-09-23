@@ -57,6 +57,7 @@ jobs:
 
   other:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       - name: "Mostrar mensaje"
