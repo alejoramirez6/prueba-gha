@@ -64,13 +64,13 @@ jobs:
         run: echo "Otro mensaje"
 
       - name: Checkout
-        run: actions/checkout@v4.1.7
+        uses: actions/checkout@v4.1.7
 
       - name: LS
         run: ls -al
 
-      - name: Setup Node.js enviroment
-        run: actions/setup-node@v4.0.3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.3
 
       - name: node version
         run: node --version
